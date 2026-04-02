@@ -17,9 +17,6 @@
 
 / {
     // Activate ADJUST layer by pressing raise and lower
-    bindings {
-
-    }
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
