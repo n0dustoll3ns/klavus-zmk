@@ -117,7 +117,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "j_ctrl";
             #binding-cells = <2>;
-            tapping-term-ms = 250;
+            tapping-term-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -126,7 +126,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "k_alt";
             #binding-cells = <2>;
-            tapping-term-ms = 250;
+            tapping-term-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -135,7 +135,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "l_gui";
             #binding-cells = <2>;
-            tapping-term-ms = 250;
+            tapping-term-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -144,7 +144,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "s_sft";
             #binding-cells = <2>;
-            tapping-term-ms = 250;
+            tapping-term-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
