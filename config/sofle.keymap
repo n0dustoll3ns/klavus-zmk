@@ -11,14 +11,15 @@
 #include <dt-bindings/zmk/rgb.h>
 
 #define BASE 0
-#define LOWER 1
+#define LOWER-1 1
 #define RAISE 2
 #define ADJUST 3
+#define LOWER-2 4
 
 &mt { flavor = "tap-preferred"; };
 
 / {
-    // Activate ADJUST layer by pressing raise and lower
+    // Activate ADJUST layer by pressing raise and lower-1
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -26,11 +27,6 @@
         adjust_layer {
             if-layers = <1 2>;
             then-layer = <3>;
-        };
-
-        adjust2 {
-            if-layers = <4 4>;
-            then-layer = <4>;
         };
     };
 
@@ -156,11 +152,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESCAPE        &none           &none           &none           &none           &none                                                           &none           &none           &none           &none            &none            &kp BACKSPACE
-&smart_ht F1 ESC  &smart_ht F2 Q  &smart_ht F3 W  &smart_ht F4 E  &smart_ht F5 R  &smart_ht F6 T                                                  &smart_ht F7 Y  &smart_ht F8 U  &smart_ht F9 I  &smart_ht F10 O  &smart_ht F11 P  &smart_ht F12 BSPC
-&kp TAB           &mt LSHIFT A    &mt LWIN S      &mt LALT D      &mt LCTRL F     &kp G                                                           &kp H           &mt RCTRL J     &mt LALT K      &mt LWIN L       &mt RSHFT SEMI   &kp SQT
-&kp LSHFT         &kp Z           &kp X           &kp C           &kp V           &kp B                         &win_swirtch_helper    &kp ENTER  &kp N           &kp M           &kp COMMA       &kp DOT          &kp FSLH         &kp RSHFT
-                                  &none           &none           &kp LCTRL       &layer_tap_macro 1 LG(SPACE)  &kp SPACE              &kp ENTER  &mo 2           &kp RCTRL       &none           &none
+&kp ESCAPE  &none        &none      &none      &none       &none                                                           &none           &none           &none           &none            &none            &kp BACKSPACE
+&kp GRAVE   &kp Q        &kp W      &kp E      &kp R       &kp T                                                           &kp Y           &kp U           &kp I           &kp O            &kp P            &kp BACKSPACE
+&kp TAB     &mt LSHIFT A &mt LWIN S &mt LALT D &mt LCTRL F &kp G                                                           &kp H           &mt RCTRL J     &mt LALT K      &mt LWIN L       &mt RSHFT SEMI   &kp SQT
+&kp LSHFT   &kp Z        &kp X      &kp C      &kp V       &kp B                         &win_swirtch_helper    &kp ENTER  &kp N           &kp M           &kp COMMA       &kp DOT          &kp FSLH         &kp RSHFT
+                         &none      &none      &mo 4       &layer_tap_macro 1 LG(SPACE)  &kp SPACE              &kp ENTER  &mo 2           &kp RCTRL       &none           &none
             >;
 
             sensor-bindings =
@@ -168,8 +164,8 @@
                 <&inc_dec_kp TAB LS(TAB)>;
         };
 
-        lower {
-            display-name = "lower";
+        lower-1 {
+            display-name = "lower-1";
 
             // TODO: Some binds are waiting for shifted keycode support.
             // ------------------------------------------------------------------------------------------------------------
@@ -180,10 +176,10 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&none           &none              &none           &none             &none          &none                                &kp F7     &none               &none              &none              &trans          &kp BACKSPACE
-&Ne_w_null_opt  &kp DELETE         &kp LG(LEFT)    &kp UP_ARROW      &kp LG(RIGHT)  &kp RIGHT_BRACKET                    &kp MINUS  &kp NUMBER_7        &kp NUMBER_8       &kp NUMBER_9       &kp ASTRK       &kp DEL
-&arrowFunc      &kp LBKT           &kp LEFT_ARROW  &kp DOWN_ARROW    &kp RIGHT      &kp UNDER                            &kp PLUS   &mt RCTRL NUMBER_4  &mt LALT NUMBER_5  &mt LWIN NUMBER_6  &mt RSHFT FSLH  &kp PIPE
-&trans          &open_fig_bracers  &kp C_PREV      &kp C_PLAY_PAUSE  &kp C_NEXT     &kp ENTER          &trans    &trans  &kp EQUAL  &kp NUMBER_1        &kp NUMBER_2       &kp NUMBER_3       &kp KP_DOT      &kp BSLH
+&none           &none              &none           &none             &none          &none                                &kp F7     &none               &none              &none             &trans          &kp BACKSPACE
+&Ne_w_null_opt  &kp DELETE         &kp LG(LEFT)    &kp UP_ARROW      &kp LG(RIGHT)  &kp RIGHT_BRACKET                    &kp MINUS  &kp NUMBER_7        &kp NUMBER_8       &kp NUMBER_9      &kp ASTRK       &kp DEL
+&arrowFunc      &kp LBKT           &kp LEFT_ARROW  &kp DOWN_ARROW    &kp RIGHT      &kp UNDER                            &kp PLUS   &mt RCTRL NUMBER_4  &mt LALT NUMBER_5  &mt LWIN NUMBER_6 &mt RSHFT FSLH  &kp PIPE
+&trans          &open_fig_bracers  &kp C_PREV      &kp C_PLAY_PAUSE  &kp C_NEXT     &kp ENTER          &trans    &trans  &kp EQUAL  &kp NUMBER_1        &kp NUMBER_2       &kp NUMBER_3      &kp KP_DOT      &kp BSLH
                                    &none           &none             &trans         &trans             &trans    &trans  &trans     &mt RCTRL NUMBER_0  &none              &none
             >;
 
@@ -230,6 +226,31 @@
                                     &none            &none            &none            &none            &none              &none  &none  &none  &none           &none
             >;
         };
+
+        lower-2 {
+            display-name = "lower-2";
+
+            // TODO: Some binds are waiting for shifted keycode support.
+            // ------------------------------------------------------------------------------------------------------------
+            // |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
+            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |  F12  |
+            // |       |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   |   |
+            // |       |  =  |  -  |  +   |  {   |  }   |        |  |       |  [   |  ]    |  ;    |  :   |   \   |       |
+            //               |     |      |      |      |        |  |       |      |       |       |      |
+
+            bindings = <
+&kp ESC   &none      &none           &none             &none          &none                                     &none     &none               &none              &none             &trans          &none
+&kp F1    &kp F2     &kp F3          &kp F4            &kp F5         &kp F6                                    &kp F7    &kp F8              &kp F9             &kp F10           &kp F11         &kp F12
+&kp TAB   &kp LC(A)  &kp LC(S)       &kp LC(D)         &kp LC(F)      &kp LC(G)                                 &kp RC(H) &kp RC(J)           &kp RC(K)          &kp RC(L)         &trans          &trans
+&kp LSHFT &kp LC(Z)  &kp LC(X)       &kp LC(C)         &kp LC(V)      &kp LC(B)     &trans             &trans   &kp EQUAL &kp RC(M)           &trans             &trans            &trans          &trans
+                     &none           &none             &trans         &trans        &trans             &trans   &trans    &trans              &none              &none
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp LC(PAGE_DOWN) LC(PAGE_UP)>,
+                <&inc_dec_kp LC(C_VOLUME_UP) LC(C_VOLUME_DOWN)>;
+        };
+
 
         helper-layer {
             bindings = <
