@@ -15,6 +15,7 @@
 #define RAISE 2
 #define ADJUST 3
 #define LOWER-2 4
+#define HELPER-LAYER 5
 
 &mt { flavor = "tap-preferred"; };
 
@@ -82,9 +83,9 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&tog 4 &kt LGUI>,
+                <&tog 5 &kt LGUI>,
                 <&macro_pause_for_release>,
-                <&tog 4 &kt LGUI>;
+                <&tog 5 &kt LGUI>;
 
             label = "MACOS_SWITCH_HELPER";
         };
@@ -94,9 +95,9 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&tog 4 &kt LALT>,
+                <&tog 5 &kt LALT>,
                 <&macro_pause_for_release>,
-                <&tog 4 &kt LALT>,
+                <&tog 5 &kt LALT>,
                 <&macro_press>;
 
             label = "WIN_SWIRTCH_HELPER";
@@ -105,7 +106,7 @@
         Ne_w_null_opt: Ne_w_null_opt {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp EXCLAMATION &kp EQUAL &sl 4>;
+            bindings = <&kp EXCLAMATION &kp EQUAL &sl 5>;
             label = "NE_W_NULL_OPT";
             tap-ms = <0>;
         };
@@ -120,7 +121,7 @@
         open_fig_bracers: open_fig_bracers {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LBRC &kp RBRC &sl 4>;
+            bindings = <&kp LBRC &kp RBRC &sl 5>;
             label = "OPEN_FIG_BRACERS";
         };
 
@@ -153,9 +154,9 @@
 
             bindings = <
 &none       &none        &none      &none      &none       &none                                                           &none           &none           &none           &none            &none            &none
-&kp ESCAPE  &kp Q        &kp W      &kp E      &kp R       &kp T                                                           &kp Y           &kp U           &kp I           &kp O            &kp P            &kp LBKT 
+&kp ESCAPE  &kp Q        &kp W      &kp E      &kp R       &kp T                                                           &kp Y           &kp U           &kp I           &kp O            &kp P            &kp BACKSPACE  
 &kp TAB     &mt LSHIFT A &mt LWIN S &mt LALT D &mt LCTRL F &kp G                                                           &kp H           &mt RCTRL J     &mt LALT K      &mt LWIN L       &mt RSHFT SEMI   &kp SQT
-&kp LSHFT   &kp Z        &kp X      &kp C      &kp V       &kp B                         &win_swirtch_helper    &kp ENTER  &kp N           &kp M           &kp COMMA       &kp DOT          &kp FSLH         &kp RSHFT
+&kp LSHFT   &kp Z        &kp X      &kp C      &kp V       &kp B                         &win_swirtch_helper    &kp ENTER  &kp N           &kp M           &kp COMMA       &kp DOT          &kp FSLH         &kp LBKT
                          &none      &none      &mo 4       &layer_tap_macro 1 LG(SPACE)  &kp SPACE              &kp ENTER  &mo 2           &mo 4           &none           &none
             >;
 
@@ -177,7 +178,7 @@
 
             bindings = <
 &none           &none              &none           &none             &none          &none                                &none      &none               &none              &none             &none           &none
-&Ne_w_null_opt  &kp DELETE         &kp LG(LEFT)    &kp UP_ARROW      &kp LG(RIGHT)  &kp RIGHT_BRACKET                    &kp MINUS  &kp NUMBER_7        &kp NUMBER_8       &kp NUMBER_9      &kp ASTRK       &kp BACKSPACE
+&Ne_w_null_opt  &kp DELETE         &kp LG(LEFT)    &kp UP_ARROW      &kp LG(RIGHT)  &kp RIGHT_BRACKET                    &kp MINUS  &kp NUMBER_7        &kp NUMBER_8       &kp NUMBER_9      &kp ASTRK       &kp F12
 &arrowFunc      &kp LBKT           &kp LEFT_ARROW  &kp DOWN_ARROW    &kp RIGHT      &kp UNDER                            &kp PLUS   &mt RCTRL NUMBER_4  &mt LALT NUMBER_5  &mt LWIN NUMBER_6 &mt RSHFT FSLH  &kp PIPE
 &trans          &kp GRAVE          &kp C_PREV      &kp C_PLAY_PAUSE  &kp C_NEXT     &kp ENTER          &trans    &trans  &kp EQUAL  &kp NUMBER_1        &kp NUMBER_2       &kp NUMBER_3      &kp KP_DOT      &kp BSLH
                                    &none           &none             &trans         &trans             &trans    &trans  &trans     &mt RCTRL NUMBER_0  &none              &none
@@ -200,7 +201,7 @@
 
             bindings = <
 &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans        &trans    &trans         &trans             &trans
-&trans  &kp INS       &kp PSCRN     &kp K_CMENU   &trans        &trans                          &kp PG_UP  &kp HOME      &kp UP    &kp END        &kp LPAR           &kp DELETE
+&trans  &kp INS       &kp PSCRN     &kp K_CMENU   &trans        &trans                          &kp PG_UP  &kp HOME      &kp UP    &kp END        &kp LPAR           &kp F12
 &trans  &kp LSHFT     &kp LWIN      &kp LALT      &kp LCTRL     &kp CLCK                        &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT      &mt RSHFT LBKT     &kp RBKT
 &trans  &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE   &trans        &trans    &trans  &trans     &kp LC(LEFT)  &trans    &kp LC(RIGHT)  &open_fig_bracers  &trans
                       &none         &none         &trans        &trans        &trans    &trans  &trans     &trans        &none     &none
@@ -241,7 +242,7 @@
             bindings = <
 &kp ESC   &none      &none           &none             &none          &none                                     &none     &none               &none              &none             &trans          &none
 &kp F1    &kp F2     &kp F3          &kp F4            &kp F5         &kp F6                                    &kp F7    &kp F8              &kp F9             &kp F10           &kp F11         &kp F12
-&kp TAB   &kp LC(A)  &kp LC(S)       &kp LC(D)         &kp LC(F)      &kp LC(G)                                 &kp RC(H) &kp RC(J)           &kp RC(K)          &kp RC(L)         &kp RC(SEMI)    &trans
+&kp LC(TAB)   &kp LC(A)  &kp LC(S)       &kp LC(D)         &kp LC(F)      &kp LC(G)                                 &kp RC(H) &kp RC(J)           &kp RC(K)          &kp RC(L)         &kp RC(SEMI)    &trans
 &kp LSHFT &kp LC(Z)  &kp LC(X)       &kp LC(C)         &kp LC(V)      &kp LC(B)     &trans             &trans   &kp EQUAL &kp RC(M)           &kp RC(COMMA)      &kp RC(DOT)       &kp RC(FSLH)    &kp RC(RSHFT)
                      &none           &none             &trans         &trans        &trans             &trans   &trans    &trans              &none              &none
             >;
@@ -253,6 +254,7 @@
 
 
         helper-layer {
+            display-name = "helper-layer";
             bindings = <
 &trans  &trans                  &kp NUMBER_2  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans                  &trans
 &prnul  &trans                  &trans        &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans                  &trans
@@ -267,12 +269,13 @@
         };
 
         mac_layer {
+            display-name = "mac_layer";
             bindings = <
 &trans  &trans  &trans     &trans    &trans    &trans                                  &trans  &trans    &trans    &trans     &trans  &trans
 &trans  &trans  &trans     &trans    &trans    &trans                                  &trans  &trans    &trans    &trans     &trans  &trans
 &trans  &trans  &trans     &trans    &trans    &trans                                  &trans  &trans    &trans    &trans     &trans  &trans
 &trans  &trans  &trans     &trans    &trans    &trans  &macos_switch_helper    &trans  &trans  &trans    &trans    &trans     &trans  &trans
-                &kp LCTRL  &kp LALT  &kp LWIN  &trans  &trans                  &trans  &trans  &kp RWIN  &kp RALT  &kp LCTRL
+                &trans     &trans    &kp LWIN  &trans  &trans                  &trans  &trans  &kp RWIN  &trans    &trans   
             >;
 
             label = "mac";
