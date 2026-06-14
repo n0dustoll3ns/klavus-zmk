@@ -11,7 +11,7 @@
 #include <dt-bindings/zmk/rgb.h>
 
 #define BASE 0
-#define LOWER-1 1
+#define SYMBOLS 1
 #define RAISE 2
 #define ADJUST 3
 #define LOWER-2 4
@@ -164,8 +164,8 @@
                 <&inc_dec_kp TAB LS(TAB)>;
         };
 
-        lower-1 {
-            display-name = "lower-1";
+        symbols {
+            display-name = "symbols";
 
             // TODO: Some binds are waiting for shifted keycode support.
             // ------------------------------------------------------------------------------------------------------------
