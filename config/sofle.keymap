@@ -14,8 +14,8 @@
 #define SYMBOLS 1
 #define NAV 2
 #define ADJUST 3
-#define LOWER-2 4
-#define HELPER-LAYER 5
+#define CONTROL 4
+#define HELPER 5
 
 &mt { flavor = "tap-preferred"; };
 
@@ -227,8 +227,8 @@
             >;
         };
 
-        lower-2 {
-            display-name = "lower-2";
+        control {
+            display-name = "control";
 
             // TODO: Some binds are waiting for shifted keycode support.
             // ------------------------------------------------------------------------------------------------------------
@@ -252,8 +252,8 @@
         };
 
 
-        helper-layer {
-            display-name = "helper-layer";
+        helper {
+            display-name = "helper";
             bindings = <
 &trans  &trans                  &kp NUMBER_2  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans                  &trans
 &prnul  &trans                  &trans        &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans                  &trans
