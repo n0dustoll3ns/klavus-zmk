@@ -12,7 +12,7 @@
 
 #define BASE 0
 #define SYMBOLS 1
-#define RAISE 2
+#define NAV 2
 #define ADJUST 3
 #define CONTROL 4
 #define HELPER 5
@@ -21,7 +21,6 @@
 &mt { flavor = "tap-preferred"; };
 
 / {
-    // Activate ADJUST layer by pressing raise and lower-1
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -174,15 +173,8 @@
                 <&inc_dec_kp LC(C_VOLUME_UP) LC(C_VOLUME_DOWN)>;
         };
 
-        raise {
-            display-name = "raise";
-
-            // ------------------------------------------------------------------------------------------------------------
-            // | BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
-            // |       | INS  | PSCR | GUI   |       |      |                | PGUP |      |   ^   |      |       |       |
-            // |       | ALT  | CTRL | SHIFT |       | CAPS |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
-            // |       | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
-            //                |      |       |       |      |      |  |      |      |      |       |      |
+        nav {
+            display-name = "nav";
 
             bindings = <
 &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans        &trans    &trans         &trans             &trans
@@ -205,22 +197,22 @@
 &none              &none            &none            &none            &none            &none            &rgb_ug RGB_TOG    &none  &none  &none  &none           &none   &none  &none
                                     &none            &none            &none            &none            &none              &none  &none  &none  &none           &none
             >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         control {
             display-name = "control";
 
             bindings = <
-&kp ESC   &none      &none           &none             &none          &none                                     &none     &none               &none              &none             &trans          &none
-&kp F1    &kp F2     &kp F3          &kp F4            &kp F5         &kp F6                                    &kp F7    &kp F8              &kp F9             &kp F10           &kp F11         &kp F12
-&kp LC(TAB)   &kp LC(A)  &kp LC(S)       &kp LC(D)         &kp LC(F)      &kp LC(G)                                 &kp RC(H) &kp RC(J)           &kp RC(K)          &kp RC(L)         &kp RC(SEMI)    &trans
-&kp LSHFT &kp LC(Z)  &kp LC(X)       &kp LC(C)         &kp LC(V)      &kp LC(B)     &trans             &trans   &kp EQUAL &kp RC(M)           &kp RC(COMMA)      &kp RC(DOT)       &kp RC(FSLH)    &kp RC(RSHFT)
-                     &none           &none             &trans         &trans        &trans             &trans   &trans    &trans              &none              &none
+&kp ESC      &none      &none           &none             &none          &none                                     &none     &none               &none              &none             &trans          &none
+&kp F1       &kp F2     &kp F3          &kp F4            &kp F5         &kp F6                                    &kp F7    &kp F8              &kp F9             &kp F10           &kp F11         &kp F12
+&kp LC(TAB)  &kp LC(A)  &kp LC(S)       &kp LC(D)         &kp LC(F)      &kp LC(G)                                 &kp RC(H) &kp RC(J)           &kp RC(K)          &kp RC(L)         &kp RC(SEMI)    &trans
+&kp LSHFT    &kp LC(Z)  &kp LC(X)       &kp LC(C)         &kp LC(V)      &kp LC(B)     &trans          &trans   &kp EQUAL    &kp RC(M)           &kp RC(COMMA)      &kp RC(DOT)       &kp RC(FSLH)    &kp RC(RSHFT)
+                        &none           &none             &trans         &trans        &trans          &trans   &trans       &trans              &none              &none
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp LC(PAGE_DOWN) LC(PAGE_UP)>,
-                <&inc_dec_kp LC(C_VOLUME_UP) LC(C_VOLUME_DOWN)>;
+            sensor-bindings = <&inc_dec_kp LC(PAGE_DOWN) LC(PAGE_UP)>, <&inc_dec_kp LC(C_VOLUME_UP) LC(C_VOLUME_DOWN)>;
         };
 
 
@@ -234,9 +226,7 @@
                                 &trans        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp TAB LS(TAB)>,
-                <&inc_dec_kp C_VOLUME_UP LS(C_VOL_DN)>;
+            sensor-bindings = <&inc_dec_kp TAB LS(TAB)>, <&inc_dec_kp C_VOLUME_UP LS(C_VOL_DN)>;
         };
 
         mac {
@@ -249,7 +239,7 @@
                 &trans     &trans    &kp LWIN  &trans  &trans                  &trans  &trans  &kp RWIN  &trans    &trans   
             >;
 
-            label = "mac";
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
     };
 };
