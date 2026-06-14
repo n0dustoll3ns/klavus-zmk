@@ -277,8 +277,6 @@
 &trans  &trans  &trans     &trans    &trans    &trans  &macos_switch_helper    &trans  &trans  &trans    &trans    &trans     &trans  &trans
                 &trans     &trans    &kp LWIN  &trans  &trans                  &trans  &trans  &kp RWIN  &trans    &trans   
             >;
-
-            label = "mac";
         };
     };
 };
