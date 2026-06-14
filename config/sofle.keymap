@@ -14,8 +14,9 @@
 #define SYMBOLS 1
 #define RAISE 2
 #define ADJUST 3
-#define LOWER-2 4
-#define HELPER-LAYER 5
+#define CONTROL 4
+#define HELPER 5
+#define MAC 5
 
 &mt { flavor = "tap-preferred"; };
 
@@ -157,8 +158,8 @@
                 <&inc_dec_kp TAB LS(TAB)>;
         };
 
-        control {
-            display-name = "control";
+        symbols {
+            display-name = "symbols";
 
             bindings = <
 &none           &none              &none           &none             &none          &none                                &none      &none               &none              &none             &none           &none
@@ -195,12 +196,6 @@
         };
 
         adjust {
-            // ----------------------------------------------------------------------------------------------------------------------------
-            // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
-            // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
-            // |        | RGB_BRD | RGB_BRI |         |         |         |                  |      |      |       |      |       |       |
-            // |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
-            //                    |         |         |         |         |         | |      |      |      |       |      |
 
             display-name = "adjust";
             bindings = <
@@ -212,16 +207,8 @@
             >;
         };
 
-        lower-2 {
-            display-name = "lower-2";
-
-            // TODO: Some binds are waiting for shifted keycode support.
-            // ------------------------------------------------------------------------------------------------------------
-            // |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
-            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |  F12  |
-            // |       |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   |   |
-            // |       |  =  |  -  |  +   |  {   |  }   |        |  |       |  [   |  ]    |  ;    |  :   |   \   |       |
-            //               |     |      |      |      |        |  |       |      |       |       |      |
+        control {
+            display-name = "control";
 
             bindings = <
 &kp ESC   &none      &none           &none             &none          &none                                     &none     &none               &none              &none             &trans          &none
@@ -237,8 +224,8 @@
         };
 
 
-        helper-layer {
-            display-name = "helper-layer";
+        helper {
+            display-name = "helper";
             bindings = <
 &trans  &trans                  &kp NUMBER_2  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans                  &trans
 &prnul  &trans                  &trans        &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans                  &trans
@@ -252,8 +239,8 @@
                 <&inc_dec_kp C_VOLUME_UP LS(C_VOL_DN)>;
         };
 
-        mac_layer {
-            display-name = "mac_layer";
+        mac {
+            display-name = "mac";
             bindings = <
 &trans  &trans  &trans     &trans    &trans    &trans                                  &trans  &trans    &trans    &trans     &trans  &trans
 &trans  &trans  &trans     &trans    &trans    &trans                                  &trans  &trans    &trans    &trans     &trans  &trans
