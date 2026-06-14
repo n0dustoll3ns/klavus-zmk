@@ -9,7 +9,7 @@
 #define NAV 2
 #define ADJUST 3
 #define CONTROL 4
-#define HELPER 5
+#define STICKY 5
 #define MAC 6
 
 &mt { flavor = "tap-preferred"; };
@@ -211,8 +211,8 @@
         };
 
 
-        helper {
-            display-name = "helper";
+        sticky {
+            display-name = "sticky";
             bindings = <
 &trans  &trans                  &none         &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans                  &trans
 &prnul  &trans                  &kp NUMBER_2  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans                  &trans
