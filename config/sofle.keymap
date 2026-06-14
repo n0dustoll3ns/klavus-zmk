@@ -41,8 +41,6 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <150>;
-
-
             bindings = <&tap_arg>, <&kp>;
         };
 
@@ -139,11 +137,11 @@
 
 
             bindings = <
-&none       &none        &none      &none      &none       &none                                                           &none           &none           &none           &none            &none            &none
-&kp ESCAPE  &kp Q        &kp W      &kp E      &kp R       &kp T                                                           &kp Y           &kp U           &kp I           &kp O            &kp P            &kp BACKSPACE  
-&kp TAB     &mt LSHIFT A &mt LWIN S &mt LALT D &mt LCTRL F &kp G                                                           &kp H           &mt RCTRL J     &mt LALT K      &mt LWIN L       &mt RSHFT SEMI   &kp LBKT
-&kp LSHFT   &kp Z        &kp X      &kp C      &kp V       &kp B                         &win_swirtch_helper    &kp ENTER  &kp N           &kp M           &kp COMMA       &kp DOT          &kp FSLH         &kp SQT
-                         &none      &none      &mo 4       &layer_tap_macro 1 LG(SPACE)  &kp SPACE              &kp ENTER  &mo 2           &mo 4           &none           &none
+&none       &none        &none      &none      &none       &none                                                        &none  &none       &none       &none            &none            &none
+&kp ESCAPE  &kp Q        &kp W      &kp E      &kp R       &kp T                                                        &kp Y  &kp U       &kp I       &kp O            &kp P            &kp BACKSPACE  
+&kp TAB     &mt LSHIFT A &mt LWIN S &mt LALT D &mt LCTRL F &kp G                                                        &kp H  &mt RCTRL J &mt LALT K  &mt LWIN L       &mt RSHFT SEMI   &kp LBKT
+&kp LSHFT   &kp Z        &kp X      &kp C      &kp V       &kp B                         &win_switch_helper  &kp ENTER  &kp N  &kp M       &kp COMMA   &kp DOT          &kp FSLH         &kp SQT
+                         &none      &none      &mo 4       &layer_tap_macro 1 LG(SPACE)  &kp SPACE           &kp ENTER  &mo 2  &mo 4       &none       &none
             >;
 
             sensor-bindings =
