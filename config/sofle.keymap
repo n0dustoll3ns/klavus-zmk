@@ -267,8 +267,8 @@
                 <&inc_dec_kp C_VOLUME_UP LS(C_VOL_DN)>;
         };
 
-        mac_layer {
-            display-name = "mac_layer";
+        mac {
+            display-name = "mac";
             bindings = <
 &trans  &trans  &trans     &trans    &trans    &trans                                  &trans  &trans    &trans    &trans     &trans  &trans
 &trans  &trans  &trans     &trans    &trans    &trans                                  &trans  &trans    &trans    &trans     &trans  &trans
