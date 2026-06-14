@@ -198,11 +198,11 @@
 
 
             bindings = <
-&kp ESC   &none      &none           &none             &none          &none                                     &none     &none               &none              &none             &trans          &none
-&kp F1    &kp F2     &kp F3          &kp F4            &kp F5         &kp F6                                    &kp F7    &kp F8              &kp F9             &kp F10           &kp F11         &kp F12
-&kp LC(TAB)   &kp LC(A)  &kp LC(S)       &kp LC(D)         &kp LC(F)      &kp LC(G)                                 &kp RC(H) &kp RC(J)           &kp RC(K)          &kp RC(L)         &kp RC(SEMI)    &trans
-&kp LSHFT &kp LC(Z)  &kp LC(X)       &kp LC(C)         &kp LC(V)      &kp LC(B)     &trans             &trans   &kp EQUAL &kp RC(M)           &kp RC(COMMA)      &kp RC(DOT)       &kp RC(FSLH)    &kp RC(RSHFT)
-                     &none           &none             &trans         &trans        &trans             &trans   &trans    &trans              &none              &none
+&none        &none      &none      &none      &none      &none                                     &none     &none      &none         &none        &trans        &none
+&kp F1       &kp F2     &kp LC(W)  &kp LC(E)  &kp LC(R)  &kp LC(T)                                 &kp RC(Y) &kp RC(U)  &kp RC(I)     &kp RC(O)    &kp RC(P)     &kp F12
+&kp LC(TAB)  &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)                                 &kp RC(H) &kp RC(J)  &kp RC(K)     &kp RC(L)    &kp RC(SEMI)  &trans
+&kp LSHFT    &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)     &trans             &trans   &kp EQUAL &kp RC(M)  &kp RC(COMMA) &kp RC(DOT)  &kp RC(FSLH)  &kp RC(RSHFT)
+                        &none      &none      &trans     &trans        &trans             &trans   &trans    &trans     &none         &none
             >;
 
             sensor-bindings =
@@ -214,8 +214,8 @@
         helper {
             display-name = "helper";
             bindings = <
-&trans  &trans                  &kp NUMBER_2  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans                  &trans
-&prnul  &trans                  &trans        &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans                  &trans
+&trans  &trans                  &none         &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans                  &trans
+&prnul  &trans                  &kp NUMBER_2  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans                  &trans
 &trans  &trans                  &trans        &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans                  &trans
 &trans  &add_interpolation_sym  &trans        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &add_interpolation_sym  &trans
                                 &trans        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
