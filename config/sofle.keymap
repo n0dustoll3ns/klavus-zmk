@@ -80,7 +80,7 @@
             label = "MACOS_SWITCH_HELPER";
         };
 
-        win_swirtch_helper: win_swirtch_helper {
+        win_switch_helper: win_switch_helper {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -90,7 +90,7 @@
                 <&tog 5 &kt LALT>,
                 <&macro_press>;
 
-            label = "WIN_SWIRTCH_HELPER";
+            label = "WIN_SWITCH_HELPER";
         };
 
         Ne_w_null_opt: Ne_w_null_opt {
