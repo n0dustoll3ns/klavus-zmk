@@ -171,8 +171,8 @@
 
 
             bindings = <
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans        &trans    &trans         &trans             &trans
-&trans  &kp INS       &kp PSCRN     &kp K_CMENU   &trans        &trans                          &kp PG_UP  &kp HOME      &kp UP    &kp END        &kp LPAR           &kp F12
+&none   &none         &none         &none         &none         &none                           &none      &none         &none     &none          &none              &none 
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &kp PG_UP  &kp HOME      &kp UP    &kp END        &kp LPAR           &kp F12
 &trans  &kp LSHFT     &kp LWIN      &kp LALT      &kp LCTRL     &kp CLCK                        &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT      &mt RSHFT LBKT     &kp RBKT
 &trans  &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE   &trans        &trans    &trans  &trans     &kp LC(LEFT)  &trans    &kp LC(RIGHT)  &open_fig_bracers  &trans
                       &none         &none         &trans        &trans        &trans    &trans  &trans     &trans        &none     &none
