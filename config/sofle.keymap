@@ -154,11 +154,11 @@
 
 
             bindings = <
-&none           &none              &none           &none             &none          &none                                &none      &none               &none              &none             &none           &none
-&Ne_w_null_opt  &trans             &kp LG(LEFT)    &kp UP_ARROW      &kp LG(RIGHT)  &kp RIGHT_BRACKET                    &kp MINUS  &kp NUMBER_7        &kp NUMBER_8       &kp NUMBER_9      &kp ASTRK       &kp BACKSPACE
-&arrowFunc      &trans             &kp LEFT_ARROW  &kp DOWN_ARROW    &kp RIGHT      &kp UNDER                            &kp PLUS   &mt RCTRL NUMBER_4  &mt LALT NUMBER_5  &mt LWIN NUMBER_6 &mt RSHFT FSLH  &kp PIPE
-&trans          &trans             &kp C_PREV      &kp C_PLAY_PAUSE  &kp C_NEXT     &kp ENTER          &trans    &trans  &kp EQUAL  &kp NUMBER_1        &kp NUMBER_2       &kp NUMBER_3      &kp KP_DOT      &kp BSLH
-                                   &none           &none             &trans         &trans             &trans    &trans  &trans     &mt RCTRL NUMBER_0  &none              &none
+&none           &none       &none           &none             &none          &none                                &none      &none               &none              &none             &none           &none
+&Ne_w_null_opt  &kp DEL     &kp LG(LEFT)    &kp UP_ARROW      &kp LG(RIGHT)  &kp RIGHT_BRACKET                    &kp MINUS  &kp NUMBER_7        &kp NUMBER_8       &kp NUMBER_9      &kp ASTRK       &kp BACKSPACE
+&arrowFunc      &trans      &kp LEFT_ARROW  &kp DOWN_ARROW    &kp RIGHT      &kp UNDER                            &kp PLUS   &mt RCTRL NUMBER_4  &mt LALT NUMBER_5  &mt LWIN NUMBER_6 &mt RSHFT FSLH  &kp PIPE
+&trans          &trans      &kp C_PREV      &kp C_PLAY_PAUSE  &kp C_NEXT     &kp ENTER          &trans    &trans  &kp EQUAL  &kp NUMBER_1        &kp NUMBER_2       &kp NUMBER_3      &kp KP_DOT      &kp BSLH
+                            &none           &none             &trans         &trans             &trans    &trans  &trans     &mt RCTRL NUMBER_0  &none              &none
             >;
 
             sensor-bindings =
